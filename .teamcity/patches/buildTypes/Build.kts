@@ -26,8 +26,9 @@ changeBuildType(RelativeId("Build")) {
         }
         insert(1) {
             nodeJS {
+                name = "build"
                 id = "nodejs_runner_1"
-                shellScript = "npm install"
+                shellScript = "npm build"
             }
         }
     }
