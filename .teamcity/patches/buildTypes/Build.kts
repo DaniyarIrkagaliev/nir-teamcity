@@ -1,6 +1,7 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.NodeJSBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.nodeJS
 import jetbrains.buildServer.configs.kotlin.ui.*
 
@@ -17,6 +18,12 @@ changeBuildType(RelativeId("Build")) {
         }
     }
     steps {
+        update<NodeJSBuildStep>(0) {
+            name = "install"
+            clearConditions()
+            shellScript = "npm run install"
+            param("teamcity.kubernetes.executor.pull.policy", "")
+        }
         insert(1) {
             nodeJS {
                 id = "nodejs_runner_1"
