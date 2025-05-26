@@ -11,6 +11,11 @@ To apply the patch, change the buildType with id = 'Build'
 accordingly, and delete the patch script.
 */
 changeBuildType(RelativeId("Build")) {
+    check(name == "Build") {
+        "Unexpected name: '$name'"
+    }
+    name = "first"
+
     expectSteps {
         nodeJS {
             id = "nodejs_runner"
