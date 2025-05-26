@@ -31,5 +31,12 @@ changeBuildType(RelativeId("Build")) {
                 shellScript = "npm run test"
             }
         }
+        insert(2) {
+            nodeJS {
+                name = "build"
+                id = "build"
+                shellScript = "npm build"
+            }
+        }
     }
 }
