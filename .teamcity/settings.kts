@@ -4,7 +4,7 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.nodeJS
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 
-version = "2025.03"
+version = "2024.12"
 
 project {
     buildType(Install)
