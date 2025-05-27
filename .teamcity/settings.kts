@@ -26,7 +26,7 @@ object Install : BuildType({
     steps {
         nodeJS {
             id = "nodejs_runner"
-            shellScript = "npm run test"
+            shellScript = "npm ci"
         }
     }
 
