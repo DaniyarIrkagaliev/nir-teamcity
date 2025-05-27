@@ -26,7 +26,7 @@ changeBuildType(RelativeId("Build")) {
         update<NodeJSBuildStep>(0) {
             name = "install"
             clearConditions()
-            shellScript = "npm install"
+            shellScript = "npm ci"
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
         insert(1) {
