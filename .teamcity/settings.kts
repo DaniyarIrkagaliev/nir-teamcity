@@ -56,7 +56,7 @@ object Build : BuildType({
     steps {
         nodeJS {
             id = "nodejs_runner"
-            shellScript = "npm run build"
+            shellScript = "npm build"
         }
     }
 })
